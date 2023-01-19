@@ -49,13 +49,13 @@ public class UserController {
         return "edit";
     }
 
-    @PostMapping("/edit")
+    @PutMapping("/edit")
     public String updateUser(@ModelAttribute("user") User user, @RequestParam("id") int id) {
         userService.updateUser(user,id);
         return "redirect:/users";
     }
 
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public String delete(@RequestParam int id) {
         userService.deleteUser(id);
         return "redirect:/users" ;
